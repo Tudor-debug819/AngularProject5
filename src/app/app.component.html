@@ -5,7 +5,17 @@
 
   <app-auth />
 
-  @if(isAdmin()){
+  <!-- @if(isAdmin()){
   <p>Only admins should see!</p>
-  }
+  } -->
+  <p *appAuth="'admin'" class="protected-content admin">
+    Only admins should see!
+  </p>
+  <p *appAuth="'user'" class="protected-content unauthenticated">
+    Regular users should see!
+  </p>
+  <p *appAuth="'guest'" class="protected-content authenticated">
+    Guest users should see!
+  </p>
+  <!--you can control when this markup can be shown-->
 </main>
