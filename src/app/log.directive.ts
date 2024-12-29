@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, inject } from '@angular/core';
 
 @Directive({
   selector: '[appLog]',
@@ -9,6 +9,7 @@ import { Directive } from '@angular/core';
   }
 })
 export class LogDirective {
+  private elementRef = inject(ElementRef);
 
   onLog() {
 
